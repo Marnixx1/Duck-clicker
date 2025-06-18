@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duck Clicker Game</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background-color: #e0f7fa;
+    }
+    h1 {
+      color: #00796b;
+    }
+    #duck {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    #duck:active {
+      transform: scale(0.95);
+    }
+    #points {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <h1>Duck Clicker!</h1>
+  <img id="duck" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Rubber_duck_debugging.png" alt="Click the Duck" />
+  <div id="points">DuckPoints: 0</div>
+
+  <script>
+    let points = 0;
+    const duck = document.getElementById('duck');
+    const pointsDisplay = document.getElementById('points');
+
+    duck.addEventListener('click', () => {
+      points++;
+      pointsDisplay.textContent = `DuckPoints: ${points}`;
+    });
+  </script>
+</body>
+</html>
